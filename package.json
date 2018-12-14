@@ -1,0 +1,24 @@
+{
+  "name": "atc-application",
+  "description": "First Robotics Competition Webcast",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "initialize:client": "cd client && npm install",
+    "initialize:server": "cd server && npm install",
+    "initialize:modules": "npm run initialize:server && npm run initialize:client",
+    "initialize:all": "npm install && npm run initialize:modules",
+    "client": "npm run start -C client",
+    "client:debug": "npm run debug -C client",
+    "server": "npm run start -C server",
+    "server:debug": "npm run debug -C server",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "3.5.1"
+  },
+  "dependencies": {
+  }
+}
